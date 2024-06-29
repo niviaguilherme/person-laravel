@@ -1,66 +1,47 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## Pré-requisitos para o funcionamento do projeto de forma local
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Como pré-requisito para o funcionamento do projeto são necessárias as instalações:
 
-## About Laravel
+- [PHP 8.X](https://www.php.net/manual/en/faq.installation).
+- [Composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos).
+- MySQL ou MariaDB
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Passos para a instalação e funcionamento do projeto
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+A partir do sistema operacional escolhido abra um terminal e siga os passos abaixo:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+<b>Passo 1:</b> clone o repositório
 
-## Learning Laravel
+<b>git clone [https://github.com/niviaguilherme/unileya-api.git](https://github.com/niviaguilherme/person-laravel)</b>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+<b>Passo 2:</b> instale os arquivos necessários para o projeto a partir do composer
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+<b>composer install</b>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+<b>Passo 3:</b> gere uma nova chave para que o Laravel funcione
 
-## Laravel Sponsors
+<b>php artisan key:generate</b>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+<b>Passo 4:</b> configure o banco de dados no projeto
 
-### Premium Partners
+Primeiramente, acesso o banco de dados e crie um novo schema com o nome de sua preferência. Dentro da pasta do projeto clonado há um arquivo chamado <b>.env.example</b>. Você deve renomar esse arquivo para <b>.env</b>. No arquivo .env há todas as configurações do projeto. É nesse arquivo que se encontram as configurações para acesso ao banco de dados. Edite esse arquivos e coloque os dados do schema que você acabou de criar.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+DB_HOST= host do banco de dados<BR>
+DB_PORT= porta do banco de dados<BR>
+DB_DATABASE= nome do banco de dados<BR>
+DB_USERNAME= usuário para acesso ao banco de dados<BR>
+DB_PASSWORD= senha do banco de dados<BR>
 
-## Contributing
+<b>Passo 5:</b> crie as estruturas das tabelas
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+<b>php artisan migrate</b>
 
-## Code of Conduct
+<b>Passo 6:</b> popule as tabelas criadas
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+<b>php artisan db:seed</b>
 
-## Security Vulnerabilities
+<b>Passo 7:</b> suba o servidor para a API
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+<b>php artisan serve</b>
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Por padrão o servidor local estará configurado para http://127.0.0.1:8000. 

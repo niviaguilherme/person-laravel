@@ -12,7 +12,7 @@ A partir do sistema operacional escolhido abra um terminal e siga os passos abai
 
 <b>Passo 1:</b> clone o repositório
 
-<b>git clone [https://github.com/niviaguilherme/unileya-api.git](https://github.com/niviaguilherme/person-laravel)</b>
+<b>git clone [https://github.com/niviaguilherme/person-laravel.git](https://github.com/niviaguilherme/person-laravel)</b>
 
 <b>Passo 2:</b> instale os arquivos necessários para o projeto a partir do composer
 
